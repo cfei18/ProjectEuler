@@ -1,5 +1,6 @@
 package cfei.projecteuler
 import scala.collection.mutable.Map
+import cfei.projecteuler.util.Utils
 
 object Problem5 {
 
@@ -37,7 +38,7 @@ object Problem5 {
   
   def primeFactorization(num : Int) : Map[Int,Int] = {
     val results = Map[Int,Int]()
-    2.until(num + 1).filter(i => isPrime(i)).foreach(i => {
+    2.until(num + 1).filter(i => Utils.isPrime(i)).foreach(i => {
       var n = num
       var numTimes = 0
       while(n % i == 0) {
@@ -48,11 +49,6 @@ object Problem5 {
       results.put(i, numTimes)
     })
     return results
-  }
-  
-  def isPrime (num : Long) : Boolean = {
-    val sqrt = Math.sqrt(num.doubleValue()).floor.intValue()
-    return !2.until(sqrt + 1).exists(i => num % i == 0)
   }
   
 }

@@ -1,5 +1,6 @@
 package cfei.projecteuler
 import scala.collection.mutable.Set
+import cfei.projecteuler.util.Utils
 
 object Problem3 {
 
@@ -12,16 +13,11 @@ object Problem3 {
     println(maxFactor(600851475143L))
   }
   
-  def isPrime (num : Long) : Boolean = {
-    val sqrt = Math.sqrt(num.doubleValue()).floor.intValue()
-    return !2.until(sqrt + 1).exists(i => num % i == 0)
-  }
-  
   def maxFactor (num : Long) : Long = {
     
     val sqrt = Math.sqrt(num.doubleValue()).floor.intValue()
     var max = 1
-    2.until(sqrt).filter(i => isPrime(i)).foreach(i => {
+    2.until(sqrt).filter(i => Utils.isPrime(i)).foreach(i => {
       if (num % i == 0) {
         max = i
       }
