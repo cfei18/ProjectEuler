@@ -118,7 +118,7 @@ object Problem13 {
       val num = cleanedNums.substring(i, i+rowLength)
       BigInt(num)
     })
-    val sum = numList.foldLeft(BigInt(0))(_+_)
+    val sum = numList.reduceLeft[BigInt](_+_)
     println(sum.toString().substring(0,10))
   }
     
