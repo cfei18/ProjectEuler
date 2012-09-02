@@ -112,13 +112,13 @@ object Problem13 {
   val rowLength = 50
     
   def main(args:Array[String]) { 
-    val cleanedNums = nums.filter(c => c.isDigit)
+    val cleanedNums = nums.filter(_.isDigit)
     val range = 0.until(cleanedNums.length(), rowLength)
     val numList = range.map(i => {
       val num = cleanedNums.substring(i, i+rowLength)
       BigInt(num)
     })
-    val sum = numList.foldLeft(BigInt(0))((result,num) => result + num)
+    val sum = numList.foldLeft(BigInt(0))(_+_)
     println(sum.toString().substring(0,10))
   }
     
