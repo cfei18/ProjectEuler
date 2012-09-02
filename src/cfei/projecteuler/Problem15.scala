@@ -13,7 +13,11 @@ object Problem15 {
   def main(args:Array[String]) {
     //Thank you combinatorics class - the answer is just 40 choose 20
     val moves = 2 * 20
-    println(factorial(moves) / (factorial(moves - side) * factorial(side)))
+    println(getCombination(moves, side))
+  }
+  
+  def getCombination(n:BigInt, k:BigInt) : BigInt = {
+    factorial(n) / (factorial(n-k) * factorial(k))
   }
   
   def factorial(num:BigInt) : BigInt = {
