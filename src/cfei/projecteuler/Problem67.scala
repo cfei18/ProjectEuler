@@ -5,6 +5,7 @@ import scala.collection.mutable.Map
 import scala.collection.mutable.Set
 import java.io.File
 import java.util.Scanner
+import cfei.projecteuler.util.Utils
 
 object Problem67 {
 
@@ -76,7 +77,7 @@ object Problem67 {
   }
   
   def initInput() {
-    val file = new File("/Users/chrisfei/Documents/workspace2/ProjectEuler/files/triangle.txt")
+    val file = new File(Utils.FILE_PATH + "triangle.txt")
     val scanner = new Scanner(file)
     while(scanner.hasNextLine()) {
       val line = scanner.nextLine()

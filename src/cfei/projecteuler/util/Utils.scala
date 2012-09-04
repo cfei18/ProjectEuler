@@ -3,6 +3,8 @@ package cfei.projecteuler.util
 import collection.mutable.Map
 
 object Utils {
+  
+  val FILE_PATH = "/Users/chrisfei/Documents/workspace2/ProjectEuler/files/"
 
   def isPrime (num : Long) : Boolean = {
     val sqrt = Math.sqrt(num.doubleValue()).intValue()
