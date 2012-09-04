@@ -25,4 +25,8 @@ object Utils {
     return results
   }
   
+  def factorial(num:BigInt) : BigInt = {
+    BigInt(2).until(num+1).reduce(_*_)
+  }
+  
 }

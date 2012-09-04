@@ -1,4 +1,5 @@
 package cfei.projecteuler
+import cfei.projecteuler.util.Utils
 
 object Problem15 {
 
@@ -17,10 +18,7 @@ object Problem15 {
   }
   
   def getCombination(n:BigInt, k:BigInt) : BigInt = {
-    factorial(n) / (factorial(n-k) * factorial(k))
+    Utils.factorial(n) / (Utils.factorial(n-k) * Utils.factorial(k))
   }
   
-  def factorial(num:BigInt) : BigInt = {
-    BigInt(2).until(num+1).reduce(_*_)
-  }
 }
